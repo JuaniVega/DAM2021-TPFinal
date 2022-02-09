@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">tp_final</string>
+
+    //Datos de registros
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="dni">DNI</string>
+    <string name="universidad">Universidad</string>
+    <string name="pais">País</string>
+
+    //Botones
+    <string name="iniciar_sesion_btn">Iniciar Sesión</string>
+    <string name="registrarse_btn">Registrarse</string>
+    <string name="siguiente_btn">Siguiente</string>
+    <string name="comenzar_btn">Comenzar a estudiar</string>
+
+    //Textos
+    <string name="bienvenida"><h1>Bienvenido!</h1></string>
+    <string name="bienvenida2"><h3>Inicia sesión o registrate para comenzar a estudiar</h3></string>
+    <string name="registrarse_pnt"><h1>Registrate</h1></string>
+    <string name="crear_cuenta"><h3>Create una cuenta para poder comenzar</h3></string>
+    <string name="term_cond">Estoy de acuerdo con los términos y condiciones</string>
+    <string name="tenes_cuenta">¿Ya tenés cuenta? Ingresá acá</string>
+    <string name="elegir_materia">Elegí una materia</string>
+    <string name="elegir_materia_2">Múltiples materias de tu universidad estan disponibles.\nElegí una para comenzar a estudiar.</string>
+
 </resources>

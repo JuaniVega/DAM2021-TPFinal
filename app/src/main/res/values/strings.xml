@@ -15,6 +15,8 @@
     <string name="registrarse_btn">Registrarse</string>
     <string name="siguiente_btn">Siguiente</string>
     <string name="comenzar_btn">Comenzar a estudiar</string>
+    <string name="practicar_preg">Practicar preguntas</string>
+    <string name="practicar_examen">Practicar exámenes</string>
 
     //Textos
     <string name="bienvenida"><h1>Bienvenido!</h1></string>

@@ -39,16 +39,26 @@ public class IniciarSesion extends AppCompatActivity {
             public void onClick(View view) {
                 Intent ini_sesion = new Intent(IniciarSesion.this, ElegirMateria.class);
 
-                String correo = usuario.getText().toString();
-                if(!validarEmail(correo)){
-                    Toast.makeText(IniciarSesion.this, "Ingrese un correo electrónico valido", Toast.LENGTH_LONG).show();
-                    return;
+                if(!usuario.getText().equals("")) {
+                    String correo = usuario.getText().toString();
+                    if(!validarEmail(correo)){
+                        Toast.makeText(IniciarSesion.this, "Ingrese un correo electrónico valido", Toast.LENGTH_LONG).show();
+                        return;
+                    } else {
+                        if(!contraseña.getText().equals("")) {
+                            startActivity(ini_sesion);
+                        } else {
+                            Toast.makeText(IniciarSesion.this, "El campo contraseña no puede ser vacío", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                    }
                 } else {
-                    startActivity(ini_sesion);
+                    Toast.makeText(IniciarSesion.this, "El campo usuario no puede ser vacío", Toast.LENGTH_LONG).show();
+                    return;
                 }
             }
 
-            //valida que el email sea de la forma asd@asd.com
+            //valida que el email sea de la forma asd@asd.com y que no esté vacío
             private boolean validarEmail(String email) {
                 Pattern pattern = Patterns.EMAIL_ADDRESS;
                 return pattern.matcher(email).matches();

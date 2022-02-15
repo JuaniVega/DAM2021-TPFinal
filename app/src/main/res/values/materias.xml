@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="materias">
+        <item>Física I</item>
+        <item>Física II</item>
+        <item>Análisis matemático I</item>
+        <item>Análisis matemático II</item>
+        <item>Álgebra y geometría analítica</item>
+    </string-array>
+</resources>

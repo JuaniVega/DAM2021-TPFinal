@@ -29,6 +29,6 @@
     <string name="term_cond">Estoy de acuerdo con los términos y condiciones</string>
     <string name="tenes_cuenta">¿Ya tenés cuenta? Ingresá acá</string>
     <string name="elegir_materia">Elegí una materia</string>
-    <string name="elegir_materia_2">Múltiples materias de tu universidad estan disponibles.\nElegí una para comenzar a estudiar.</string>
+    <string name="elegir_materia_2">Múltiples materias están disponibles.\nSeleccioná una para comenzar a estudiar.</string>
 
 </resources>

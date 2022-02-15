@@ -1,32 +1,30 @@
 package com.example.tp_final;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tp_final.model.Subtemas;
-
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
+
+    private TextView materiaSeleccionada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.vista_preguntas);
+        setContentView(R.layout.elegir_materia);
 
-        /** creando subtemas **/
-       /* ArrayList<Subtemas> subt = new ArrayList<>();
-        Subtemas sub1 = new Subtemas ( s -> {
-            s.setTitulo("MRU");
-            s.setsetCantidad_preguntas(5);
-        });
-        subt.add(sub1);
-        Subtemas sub2 = new Subtemas ( s -> {
-            s.setTitulo("MRUA");
-            s.setsetCantidad_preguntas(3);
-        });
-        subt.add(sub2);*/
+        materiaSeleccionada = (TextView) findViewById(R.id.txt_prueba);
+
+        Intent i1= new Intent(MainActivity.this, MateriaRecycler.class);
+        startActivityForResult(i1, 1);
+    }
+
+    protected void onActivityResult (int requestCode, int resultCode, Intent data){
+        if((requestCode==1) && (resultCode==RESULT_OK)){
+            materiaSeleccionada.setText(data.getDataString());  //TODO: deberia cambiar esta linea por un intent que redirija a la pantalla correspondiente
+        }
     }
 }

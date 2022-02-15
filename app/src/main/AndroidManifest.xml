@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Tp_final">
 
         <activity android:name=".MateriaRecycler"/>
+        <activity android:name=".TemaRecycler"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

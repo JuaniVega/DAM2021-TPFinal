@@ -14,11 +14,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.elegir_materia);
+        setContentView(R.layout.practicar_preguntas);
 
         materiaSeleccionada = (TextView) findViewById(R.id.txt_prueba);
 
-        Intent i1= new Intent(MainActivity.this, MateriaRecycler.class);
+       /* Intent i1= new Intent(MainActivity.this, MateriaRecycler.class);
+        startActivityForResult(i1, 1);*/
+
+        Intent i1= new Intent(MainActivity.this, TemaRecycler.class);
         startActivityForResult(i1, 1);
     }
 

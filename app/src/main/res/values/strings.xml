@@ -17,6 +17,9 @@
     <string name="comenzar_btn">Comenzar a estudiar</string>
     <string name="practicar_preg">Practicar preguntas</string>
     <string name="practicar_examen">Practicar exámenes</string>
+    <string name="volver_atras">Volver atrás</string>
+    <string name="obtener_ayuda">Obtener ayuda</string>
+    <string name="siguiente_preg_btn">Siguiente pregunta</string>
 
     //Textos
     <string name="bienvenida"><h1>Bienvenido!</h1></string>

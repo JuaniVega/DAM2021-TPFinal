@@ -11,7 +11,7 @@
         <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/drawable/paddin.xml" value="0.2203125" />
         <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/font/texto_principal.xml" value="0.396875" />
         <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/layout/elegir_materia.xml" value="0.25" />
+        <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/layout/elegir_materia.xml" value="0.33" />
         <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/layout/fila_materia.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/layout/fila_tema.xml" value="0.25" />
         <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/layout/iniciar_sesion.xml" value="0.25" />
@@ -20,6 +20,21 @@
         <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/layout/registrarse.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/layout/registrarse_p1.xml" value="0.25" />
         <entry key="..\:/Users/juani/AndroidStudioProjects/tp_final/app/src/main/res/layout/registrarse_p2.xml" value="0.25" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/drawable/btn_redondeado_color.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/drawable/btn_redondeado_sin_color.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/drawable/input_txt.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/layout/elegir_materia.xml" value="0.25" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/layout/iniciar_sesion.xml" value="0.24728260869565216" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/layout/mi_cuenta.xml" value="0.24728260869565216" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/layout/pnt_principal.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/layout/practicar_examenes.xml" value="0.25" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/layout/practicar_preguntas.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/layout/registrarse_p1.xml" value="0.25" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/layout/registrarse_p2.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/nanub/AndroidStudioProjects/DAM2021-TPFinal-real/app/src/main/res/layout/vista_preguntas.xml" value="0.25" />
       </map>
     </option>
   </component>

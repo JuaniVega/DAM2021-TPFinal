@@ -12,6 +12,9 @@
 
         <activity android:name=".MateriaRecycler"/>
         <activity android:name=".TemaRecycler"/>
+        <activity android:name=".vistas.IniciarSesion"/>
+        <activity android:name=".vistas.Registrarse"/>
+        <activity android:name=".vistas.ElegirMateria"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

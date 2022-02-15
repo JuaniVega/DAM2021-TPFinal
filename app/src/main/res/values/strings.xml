@@ -20,6 +20,7 @@
     <string name="volver_atras">Volver atrás</string>
     <string name="obtener_ayuda">Obtener ayuda</string>
     <string name="siguiente_preg_btn">Siguiente pregunta</string>
+    <string name="cerrar_sesion_btn">Cerrar Sesión</string>
 
     //Textos
     <string name="bienvenida"><h1>Bienvenido!</h1></string>
@@ -30,5 +31,6 @@
     <string name="tenes_cuenta">¿Ya tenés cuenta? Ingresá acá</string>
     <string name="elegir_materia">Elegí una materia</string>
     <string name="elegir_materia_2">Múltiples materias están disponibles.\nSeleccioná una para comenzar a estudiar.</string>
+    <string name="mi_cuenta">Mi cuenta</string>
 
 </resources>

@@ -39,13 +39,13 @@ public class IniciarSesion extends AppCompatActivity {
             public void onClick(View view) {
                 Intent ini_sesion = new Intent(IniciarSesion.this, ElegirMateria.class);
 
-                if(!usuario.getText().equals("")) {
+                if(usuario.getText().length()>0) {
                     String correo = usuario.getText().toString();
                     if(!validarEmail(correo)){
                         Toast.makeText(IniciarSesion.this, "Ingrese un correo electrónico valido", Toast.LENGTH_LONG).show();
                         return;
                     } else {
-                        if(!contraseña.getText().equals("")) {
+                        if(contraseña.getText().length()>0) {
                             startActivity(ini_sesion);
                         } else {
                             Toast.makeText(IniciarSesion.this, "El campo contraseña no puede ser vacío", Toast.LENGTH_LONG).show();

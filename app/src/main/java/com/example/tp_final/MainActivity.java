@@ -47,16 +47,11 @@ public class MainActivity extends AppCompatActivity {
 
         materiaSeleccionada = (TextView) findViewById(R.id.txt_prueba);
 
-       /* Intent i1= new Intent(MainActivity.this, MateriaRecycler.class);
-        startActivityForResult(i1, 1);
+       /*
 
         Intent i1= new Intent(MainActivity.this, TemaRecycler.class);
         startActivityForResult(i1, 1); */
     }
 
-    protected void onActivityResult (int requestCode, int resultCode, Intent data){
-        if((requestCode==1) && (resultCode==RESULT_OK)){
-            materiaSeleccionada.setText(data.getDataString());  //TODO: deberia cambiar esta linea por un intent que redirija a la pantalla correspondiente
-        }
-    }
+
 }

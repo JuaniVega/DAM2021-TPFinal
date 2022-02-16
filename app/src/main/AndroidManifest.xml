@@ -15,6 +15,10 @@
         <activity android:name=".vistas.IniciarSesion"/>
         <activity android:name=".vistas.Registrarse"/>
         <activity android:name=".vistas.ElegirMateria"/>
+        <activity android:name=".vistas.Registrarse2"/>
+        <activity android:name=".vistas.PracticarPreguntas"/>
+        <activity android:name=".vistas.PracticarExamenes"/>
+        <activity android:name=".vistas.MiCuenta"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

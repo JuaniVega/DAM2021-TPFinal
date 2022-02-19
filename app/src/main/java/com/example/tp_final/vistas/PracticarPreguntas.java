@@ -19,6 +19,7 @@ public class PracticarPreguntas extends AppCompatActivity {
     private Button btnPracticarExamenes;
     private TextView cambiarMateria;
     private ImageView imagenUsuario;
+    private TextView materiaElegida;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,11 +29,15 @@ public class PracticarPreguntas extends AppCompatActivity {
         btnPracticarExamenes = (Button) findViewById(R.id.btn_practicar_examen);
         cambiarMateria = (TextView) findViewById(R.id.txt_cambiar_materia);
         imagenUsuario = (ImageView) findViewById(R.id.img_usuario);
+        materiaElegida = (TextView) findViewById(R.id.txt_materia_elegida_PP);
+
+        materiaElegida.setText(getIntent().getExtras().getString("materia"));
 
         btnPracticarExamenes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent prac_examenes = new Intent(PracticarPreguntas.this, PracticarExamenes.class);
+                prac_examenes.putExtra("materia", materiaElegida.getText());
                 startActivity(prac_examenes);
             }
         });
@@ -57,8 +62,8 @@ public class PracticarPreguntas extends AppCompatActivity {
     protected void onActivityResult (int requestCode, int resultCode, Intent data){
         if((requestCode==1) && (resultCode==RESULT_OK)){
             Intent practicar_preg = new Intent(PracticarPreguntas.this, PracticarPreguntas.class);
+            practicar_preg.putExtra("materia", data.getDataString());
             startActivity(practicar_preg);
-            //TODO: deberia cambiar esta linea por un intent que redirija a la pantalla correspondiente
         }
     }
 }

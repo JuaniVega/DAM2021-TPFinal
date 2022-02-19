@@ -28,6 +28,7 @@
         android:hint="@string/correo"
         android:inputType="textPersonName"
         android:background="@drawable/input_txt"
+        android:drawableLeft="@drawable/ic_correo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_logo" />
@@ -43,6 +44,7 @@
         android:hint="@string/contraseña"
         android:inputType="textPassword"
         android:background="@drawable/input_txt"
+        android:drawableLeft="@drawable/ic_cont"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtxt_usuario" />
@@ -58,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtxt_cont" />
 
     <CheckBox
-        android:id="@+id/cb_recordar_cont"
+        android:id="@+id/cb_recordar"
         android:layout_width="110dp"
         android:layout_height="21dp"
         android:layout_marginStart="32dp"

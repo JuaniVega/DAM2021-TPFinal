@@ -11,11 +11,15 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 
 import com.example.tp_final.MainActivity;
 import com.example.tp_final.MateriaRecycler;
 import com.example.tp_final.R;
+import com.example.tp_final.Usuario;
+import com.example.tp_final.repositorio.UsuarioRepo;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class IniciarSesion extends AppCompatActivity {
@@ -35,6 +39,8 @@ public class IniciarSesion extends AppCompatActivity {
         contraseña = (EditText) findViewById(R.id.edtxt_cont);
         registrarse = (TextView) findViewById(R.id.txt_registrate_aca);
 
+        UsuarioRepo usuarioRepo = new UsuarioRepo(this.getApplicationContext());
+
         iniciarSesionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,7 +53,19 @@ public class IniciarSesion extends AppCompatActivity {
                         return;
                     } else {
                         if(contraseña.getText().toString().trim().length() > 0) {
-                            startActivityForResult(ini_sesion, 1);
+
+                            List<Usuario> lista_usu=usuarioRepo.validarSesion(usuario.getText().toString().trim(), contraseña.getText().toString().trim());
+                            //System.out.println("lista de usuarios devuelta "+lista_usu.size());
+                            //System.out.println("usuario enviado: "+usuario.getText().toString().trim());
+                            //System.out.println("contraseña enviada: "+contraseña.getText().toString().trim());
+                            if(lista_usu.size()>0){
+                                Toast.makeText(IniciarSesion.this, "Sesion iniciada correctamente", Toast.LENGTH_LONG).show();
+                                startActivityForResult(ini_sesion, 1);
+                            }else{
+                                Toast.makeText(IniciarSesion.this, "Los datos no son correctos", Toast.LENGTH_LONG).show();
+                                return;
+                            }
+
                         } else {
                             Toast.makeText(IniciarSesion.this, "El campo contraseña no puede ser vacío", Toast.LENGTH_LONG).show();
                             return;

@@ -45,6 +45,8 @@ public class Usuario {
         this.dni=dni;
     }
 
+    public Usuario(){}
+
     public String getMail() {
         return mail;
     }

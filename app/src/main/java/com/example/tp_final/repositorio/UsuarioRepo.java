@@ -2,6 +2,8 @@ package com.example.tp_final.repositorio;
 
 import android.content.Context;
 
+import androidx.lifecycle.LiveData;
+
 import com.example.tp_final.Usuario;
 import com.example.tp_final.bdd.UsuarioBdd;
 import com.example.tp_final.dao.UsuarioDao;
@@ -18,24 +20,38 @@ public class UsuarioRepo {
     }
 
     public void insertar(Usuario usuario){
-        usuarioDao.agregar(usuario);
+        UsuarioBdd.dbExecutor.execute(
+                ()->usuarioDao.agregar(usuario)
+        );
     }
+
+   //public LiveData<List<Usuario>> validarSesion(String mail, String cont){
+    //    LiveData<List<Usuario>> listaUsuario= usuarioDao.validarSesion(/*mail, cont*/);
+   //     return listaUsuario;
+    //}
 
     public List<Usuario> validarSesion(String mail, String cont){
-        List<Usuario> listaUsuario= new ArrayList<Usuario>();
-        listaUsuario=usuarioDao.validarSesion(mail, cont);
+           List<Usuario> listaUsuario= usuarioDao.validarSesion(mail, cont);
+            return listaUsuario;
+        }
+
+    /*public LiveData<List<Usuario>> validarMailExistente(String mail){
+        LiveData<List<Usuario>> listaUsuario= usuarioDao.validarMailExistente(mail);
         return listaUsuario;
-    }
+    }*/
 
     public List<Usuario> validarMailExistente(String mail){
-        List<Usuario> listaUsuario= new ArrayList<Usuario>();
-        listaUsuario=usuarioDao.validarMailExistente(mail);
+        List<Usuario> listaUsuario= usuarioDao.validarMailExistente(mail);
         return listaUsuario;
     }
 
+    /*public LiveData<List<Usuario>> validarDniExistente(int dni){
+        LiveData<List<Usuario>> listaUsuario= usuarioDao.validarDniExistente(dni);
+        return listaUsuario;
+    }*/
+
     public List<Usuario> validarDniExistente(int dni){
-        List<Usuario> listaUsuario= new ArrayList<Usuario>();
-        listaUsuario=usuarioDao.validarDniExistente(dni);
+        List<Usuario> listaUsuario= usuarioDao.validarDniExistente(dni);
         return listaUsuario;
     }
 }

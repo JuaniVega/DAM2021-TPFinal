@@ -2,7 +2,7 @@
     <string name="app_name">tp_final</string>
 
     //Datos de registros
-    <string name="usuario">Usuario</string>
+    <string name="correo">Correo</string>
     <string name="contraseña">Contraseña</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>

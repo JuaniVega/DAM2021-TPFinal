@@ -36,7 +36,7 @@ public class PreferenciaDataSource {
     }
 
     public String recuperarMail(){
-        String defaultValue="";
+        String defaultValue="aaa";
         String mail=sharedPreferences.getString("mail",defaultValue);
         return mail;
     }

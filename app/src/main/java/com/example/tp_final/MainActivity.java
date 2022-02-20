@@ -43,14 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(registrarse);
             }
         });
-
-
-        materiaSeleccionada = (TextView) findViewById(R.id.txt_prueba);
-
-       /*
-
-        Intent i1= new Intent(MainActivity.this, TemaRecycler.class);
-        startActivityForResult(i1, 1); */
     }
 
 

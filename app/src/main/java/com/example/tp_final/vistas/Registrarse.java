@@ -14,14 +14,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tp_final.R;
+import com.example.tp_final.Usuario;
+import com.example.tp_final.repositorio.UsuarioRepo;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class Registrarse extends AppCompatActivity {
 
     private Button siguienteBtn;
-    private EditText usuario;
-    private EditText contraseña;
+    private EditText mailtxt;
+    private EditText contraseñatxt;
     private CheckBox termYCondiciones;
     private TextView ingresar;
 
@@ -31,39 +34,51 @@ public class Registrarse extends AppCompatActivity {
         setContentView(R.layout.registrarse_p1);
 
         siguienteBtn = (Button) findViewById(R.id.btn_sgte);
-        usuario = (EditText) findViewById(R.id.edtxt_usuario);
-        contraseña = (EditText) findViewById(R.id.edtxt_cont);
+        mailtxt = (EditText) findViewById(R.id.edtxt_usuario);
+        contraseñatxt = (EditText) findViewById(R.id.edtxt_cont);
         termYCondiciones = (CheckBox) findViewById(R.id.cb_term_cond);
         ingresar = (TextView) findViewById(R.id.txt_ingresa_aca);
+
+        UsuarioRepo usuarioRepo = new UsuarioRepo(this.getApplicationContext());
 
         siguienteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent paso2 = new Intent(Registrarse.this, Registrarse2.class);
 
-                if(usuario.getText().toString().trim().length() > 0) {
-                    String correo = usuario.getText().toString();
-                    if(!validarEmail(correo)){
-                        Toast.makeText(Registrarse.this, "Ingrese un correo electrónico válido", Toast.LENGTH_LONG).show();
-                        return;
-                    } else {
-                        if(contraseña.getText().toString().trim().length() > 0) {
-                            String contra = contraseña.getText().toString();
-                            if(!validarContraseña(contra)) {
-                                Toast.makeText(Registrarse.this, "Ingrese una contraseña que contenga entre 8 y 20 caracteres", Toast.LENGTH_LONG).show();
-                                return;
-                            } else {
-                                if(termYCondiciones.isChecked()) {
-                                    startActivity(paso2);
+                if(mailtxt.getText().toString().trim().length() > 0) {
+                    String correo = mailtxt.getText().toString();
+                    if(validarEstructuraEmail(correo)){
+                        if(validarEmailNoExistente(correo)) {
+                            if (contraseñatxt.getText().toString().trim().length() > 0) {
+                                String contra = contraseñatxt.getText().toString();
+                                if (validarContraseña(contra)) {
+                                    if (termYCondiciones.isChecked()) {
+
+                                        paso2.putExtra("usuario", mailtxt.getText().toString());
+                                        paso2.putExtra("contraseña", contraseñatxt.getText().toString());
+
+                                        startActivity(paso2);
+
+                                    } else {
+                                        Toast.makeText(Registrarse.this, "Debes aceptar los términos y condiciones", Toast.LENGTH_LONG).show();
+                                        return;
+                                    }
                                 } else {
-                                    Toast.makeText(Registrarse.this, "Debes aceptar los términos y condiciones", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(Registrarse.this, "Ingrese una contraseña que contenga entre 8 y 20 caracteres", Toast.LENGTH_LONG).show();
                                     return;
                                 }
+                            } else {
+                                Toast.makeText(Registrarse.this, "El campo contraseña no puede ser vacío", Toast.LENGTH_LONG).show();
+                                return;
                             }
-                        } else {
-                            Toast.makeText(Registrarse.this, "El campo contraseña no puede ser vacío", Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(Registrarse.this, "El mail ya se encuentra registrado", Toast.LENGTH_LONG).show();
                             return;
                         }
+                    } else {
+                        Toast.makeText(Registrarse.this, "Ingrese un correo electrónico válido", Toast.LENGTH_LONG).show();
+                        return;
                     }
                 } else {
                     Toast.makeText(Registrarse.this, "El campo usuario no puede ser vacío", Toast.LENGTH_LONG).show();
@@ -72,9 +87,19 @@ public class Registrarse extends AppCompatActivity {
             }
 
             //valida que el email sea de la forma asd@asd.com
-            private boolean validarEmail(String email) {
+            private boolean validarEstructuraEmail(String email) {
                 Pattern pattern = Patterns.EMAIL_ADDRESS;
                 return pattern.matcher(email).matches();
+            }
+
+            //valida que el email no se encuentre registrado
+            private boolean validarEmailNoExistente(String email) {
+                List<Usuario> lista_usu=usuarioRepo.validarMailExistente(email);
+                if(lista_usu.size()>0) {
+                    return false;
+                }else {
+                    return true;
+                }
             }
 
             //valida que la contraseña contenga entre 8 y 20 caracteres

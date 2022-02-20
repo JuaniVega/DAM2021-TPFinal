@@ -26,10 +26,24 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/volver_atras_txt"
+                    android:id="@+id/flecha"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="551dp"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:drawableLeft="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_practicar_preg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"></TextView>
+
+                <TextView
+                    android:id="@+id/volver_atras_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="551dp"
                     android:text="@string/volver_atras"
@@ -44,14 +58,16 @@
                     android:id="@+id/btn_ayuda"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="140dp"
+                    android:layout_marginStart="60dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="10dp"
+                    android:paddingRight="15dp"
                     android:background="@drawable/input_txt"
                     android:text="@string/obtener_ayuda"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="18dp"
+                    android:drawableLeft="@drawable/help_circle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent" />

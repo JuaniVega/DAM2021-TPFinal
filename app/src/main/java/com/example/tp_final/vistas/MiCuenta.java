@@ -14,6 +14,7 @@ import com.example.tp_final.R;
 
 public class MiCuenta extends AppCompatActivity {
 
+    private TextView flechaVolverAtras;
     private TextView volverAtras;
     private Button btnCerrarSesion;
 
@@ -22,8 +23,18 @@ public class MiCuenta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mi_cuenta);
 
+        flechaVolverAtras = (TextView) findViewById(R.id.flecha);
         volverAtras = (TextView) findViewById(R.id.volver_atras_txt);
         btnCerrarSesion = (Button) findViewById(R.id.btn_cerrar_sesion);
+
+        flechaVolverAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent volver_atras = new Intent(MiCuenta.this, PracticarPreguntas.class);
+                startActivity(volver_atras);
+                //TODO: ver como volver a las distintas pantallas (de practicar preg o examenes)
+            }
+        });
 
         volverAtras.setOnClickListener(new View.OnClickListener() {
             @Override

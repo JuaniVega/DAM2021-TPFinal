@@ -9,6 +9,8 @@
     <string name="dni">DNI</string>
     <string name="universidad">Universidad</string>
     <string name="pais">País</string>
+    <string name="cambiar_usuario">Cambiar email</string>
+    <string name="cambiar_contraseña">Cambiar contraseña</string>
 
     //Botones
     <string name="iniciar_sesion_btn">Iniciar Sesión</string>

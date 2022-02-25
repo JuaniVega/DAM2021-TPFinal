@@ -19,6 +19,7 @@
         <activity android:name=".vistas.PracticarPreguntas"/>
         <activity android:name=".vistas.PracticarExamenes"/>
         <activity android:name=".vistas.MiCuenta"/>
+        <activity android:name=".vistas.VistaPreguntas"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

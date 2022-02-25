@@ -29,14 +29,14 @@ public class PreferenciaDataSource {
         editor.commit();
     }
 
-    public Boolean recuperarValCB(){
-        Boolean defaultValue=false;
-        Boolean valCB=sharedPreferences.getBoolean("val",defaultValue);
+    public boolean recuperarValCB(){
+        boolean defaultValue=false;
+        boolean valCB=sharedPreferences.getBoolean("val",defaultValue);
         return valCB;
     }
 
     public String recuperarMail(){
-        String defaultValue="aaa";
+        String defaultValue="";
         String mail=sharedPreferences.getString("mail",defaultValue);
         return mail;
     }

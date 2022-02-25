@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_despl"
+        android:title="@string/menu">
+        <menu>
+            <item android:id="@+id/mi_cuenta_menu"
+                android:title="@string/mi_cuenta"
+                android:icon="@drawable/ic_mi_cuenta"/>
+            <item android:id="@+id/prac_preg_menu"
+                android:title="@string/practicar_preg"
+                android:icon="@drawable/ic_practicar_preguntas"/>
+            <item android:id="@+id/prac_exam_menu"
+                android:title="@string/practicar_examen"
+                android:icon="@drawable/ic_practicar_examenes"/>
+            <item android:id="@+id/ayuda_menu"
+                android:title="@string/ayuda"
+                android:icon="@drawable/ic_ayuda"/>
+            <item android:id="@+id/cerrar_sesion_menu"
+                android:title="@string/cerrar_sesion"
+                android:icon="@drawable/ic_cerrar_sesion"/>
+
+        </menu>
+
+        </item>
+
+</menu>

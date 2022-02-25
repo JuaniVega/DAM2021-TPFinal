@@ -20,7 +20,6 @@
     <string name="practicar_preg">Practicar preguntas</string>
     <string name="practicar_examen">Practicar exámenes</string>
     <string name="volver_atras">Volver atrás</string>
-    <string name="obtener_ayuda">Obtener ayuda</string>
     <string name="siguiente_preg_btn">Siguiente pregunta</string>
     <string name="cerrar_sesion_btn">Cerrar Sesión</string>
 
@@ -34,5 +33,13 @@
     <string name="elegir_materia">Elegí una materia</string>
     <string name="elegir_materia_2">Múltiples materias están disponibles.\nSeleccioná una para comenzar a estudiar.</string>
     <string name="mi_cuenta">Mi cuenta</string>
+    <string name="abrir_menu_desplegable">Menu desplegable abierto</string>
+    <string name="cerrar_menu_desplegable">Menu desplegable cerrado</string>
+
+    //Titulos de menú
+    <string name="obtener_ayuda">Obtener ayuda</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="menu">Menú</string>
 
 </resources>

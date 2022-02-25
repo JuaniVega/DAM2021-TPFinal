@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/toolbar"></include>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutHeader"
         android:layout_width="match_parent"
@@ -14,13 +16,13 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/layout1"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
+          <!--  <TextView
                 android:id="@+id/flecha"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
@@ -65,7 +67,7 @@
                 android:paddingRight="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent" />-->
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

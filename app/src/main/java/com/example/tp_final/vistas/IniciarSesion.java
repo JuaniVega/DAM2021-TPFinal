@@ -44,9 +44,10 @@ public class IniciarSesion extends AppCompatActivity {
         registrarse = (TextView) findViewById(R.id.txt_registrate_aca);
         recordar = (CheckBox) findViewById(R.id.cb_recordar);
 
-        preferenciaDataSource= new PreferenciaDataSource(IniciarSesion.this);
 
         UsuarioRepo usuarioRepo = new UsuarioRepo(this.getApplicationContext());
+
+        preferenciaDataSource= new PreferenciaDataSource(IniciarSesion.this);
 
         recordarDatos();
 
@@ -113,13 +114,15 @@ public class IniciarSesion extends AppCompatActivity {
         if(recordar.isChecked()){
             preferenciaDataSource.guardarMail(mailtxt.getText().toString().trim());
             preferenciaDataSource.guardarCont(contraseñatxt.getText().toString().trim());
-            preferenciaDataSource.guardarValCB(true);
+            preferenciaDataSource.guardarValCB(recordar.isChecked());
+        }else {
+            preferenciaDataSource.guardarValCB(false);
         }
-        preferenciaDataSource.guardarValCB(false);
     }
 
-    protected void onActivityResult (int requestCode, int resultCode, Intent data){
-        if((requestCode==1) && (resultCode==RESULT_OK)){
+    protected void onActivityResult (int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if ((requestCode == 1) && (resultCode == RESULT_OK)) {
             Intent practicar_preg = new Intent(IniciarSesion.this, PracticarPreguntas.class);
             practicar_preg.putExtra("materia", data.getDataString());
             startActivity(practicar_preg);

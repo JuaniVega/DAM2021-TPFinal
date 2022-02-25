@@ -15,26 +15,6 @@ public class MyReceiver1 extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        /*switch (intent.getAction()) {
-            case Intent.ACTION_BATTERY_LOW:
-
-                Intent i1 = new Intent(context, MainActivity.class);
-                PendingIntent pi = PendingIntent.getActivity(context, 0, i1, 1); //para que cuando se haga click en la notificacion entre en la pagina principal
-
-                NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, MainActivity.CANAL_MENSAJES_ID)
-                        .setSmallIcon(R.drawable.logo_original)
-                        .setContentTitle("Es hora de estudiar!")
-                        .setContentText("Aprendien2 te está esperando")
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                        .setContentIntent(pi)
-                        .setAutoCancel(true);
-
-                NotificationManagerCompat notManager = NotificationManagerCompat.from(context);
-                notManager.notify(99, nBuilder.build());
-
-                break;
-        }*/
-
         showNotification(context);
     }
 

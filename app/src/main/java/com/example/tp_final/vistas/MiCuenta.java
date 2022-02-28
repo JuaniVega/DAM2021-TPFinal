@@ -24,7 +24,10 @@ import androidx.core.content.FileProvider;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import com.example.tp_final.MainActivity;
 import com.example.tp_final.PreferenciaDataSource;
 import com.example.tp_final.R;
@@ -32,12 +35,7 @@ import com.example.tp_final.repositorio.UsuarioRepo;
 import com.google.android.material.navigation.NavigationView;
 
 public class MiCuenta extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-public class MiCuenta extends AppCompatActivity {
 
     private TextView flechaVolverAtras;
     private TextView volverAtras;

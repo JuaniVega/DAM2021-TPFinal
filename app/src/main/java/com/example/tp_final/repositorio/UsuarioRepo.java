@@ -25,6 +25,12 @@ public class UsuarioRepo {
         );
     }
 
+    public void actualizarUsuario(String mail, String cont, long dni){
+        UsuarioBdd.dbExecutor.execute(
+                ()->usuarioDao.actualizarUsuario(mail, cont, dni)
+        );
+    }
+
    //public LiveData<List<Usuario>> validarSesion(String mail, String cont){
     //    LiveData<List<Usuario>> listaUsuario= usuarioDao.validarSesion(/*mail, cont*/);
    //     return listaUsuario;

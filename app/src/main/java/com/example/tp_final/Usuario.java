@@ -11,7 +11,7 @@ public class Usuario {
     @PrimaryKey
     @NonNull
     @ColumnInfo(name="dni")
-    private int dni;
+    private long dni;
 
     @NonNull
     @ColumnInfo(name="nombre")
@@ -35,7 +35,7 @@ public class Usuario {
     @ColumnInfo(name="pais")
     private String pais;
 
-    public Usuario(String mail, String cont, String nombre, String apellido, String universidad, String pais, int dni){
+    public Usuario(String mail, String cont, String nombre, String apellido, String universidad, String pais, long dni){
         this.mail=mail;
         this.cont=cont;
         this.nombre=nombre;
@@ -79,11 +79,11 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public int getDni() {
+    public long getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(long dni) {
         this.dni = dni;
     }
 

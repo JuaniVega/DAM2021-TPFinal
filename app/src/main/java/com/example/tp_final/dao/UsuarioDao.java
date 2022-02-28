@@ -5,6 +5,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.tp_final.Usuario;
 
@@ -32,4 +33,8 @@ public interface UsuarioDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void agregar(Usuario usuario);
+
+    @Query("UPDATE Usuario SET mail = :mail, contraseña = :cont WHERE dni = :dni")
+    void actualizarUsuario(String mail, String cont, long dni);
+
 }

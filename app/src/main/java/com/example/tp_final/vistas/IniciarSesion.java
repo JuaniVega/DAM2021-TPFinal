@@ -66,7 +66,8 @@ public class IniciarSesion extends AppCompatActivity {
 
                             List<Usuario> lista_usu=usuarioRepo.validarSesion(mailtxt.getText().toString().trim(), contraseñatxt.getText().toString().trim());
                             if(lista_usu.size()>0){
-                                guardarPreferencias();
+                                guardarPreferenciasIncioSesion();
+                                guardarUsuarioActual(lista_usu);
                                 Toast.makeText(IniciarSesion.this, "Sesion iniciada correctamente", Toast.LENGTH_LONG).show();
                                 startActivityForResult(ini_sesion, 1);
 
@@ -102,6 +103,14 @@ public class IniciarSesion extends AppCompatActivity {
 
     }
 
+    private void guardarUsuarioActual(List<Usuario> lista_usu) {
+        preferenciaDataSource.guardarMailUsuarioActual(lista_usu.get(0).getMail());
+        preferenciaDataSource.guardarContUsuarioActual(lista_usu.get(0).getCont());
+        preferenciaDataSource.guardarDniUsuarioActual(lista_usu.get(0).getDni());
+        preferenciaDataSource.guardarNombreUsuarioActual(lista_usu.get(0).getNombre());
+        preferenciaDataSource.guardarApellidoUsuarioActual(lista_usu.get(0).getApellido());
+    }
+
     private void recordarDatos(){
         recordar.setChecked(preferenciaDataSource.recuperarValCB());
         if(recordar.isChecked()){
@@ -110,7 +119,7 @@ public class IniciarSesion extends AppCompatActivity {
         }
     }
 
-    private void guardarPreferencias(){
+    private void guardarPreferenciasIncioSesion(){
         if(recordar.isChecked()){
             preferenciaDataSource.guardarMail(mailtxt.getText().toString().trim());
             preferenciaDataSource.guardarCont(contraseñatxt.getText().toString().trim());
@@ -123,9 +132,9 @@ public class IniciarSesion extends AppCompatActivity {
     protected void onActivityResult (int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if ((requestCode == 1) && (resultCode == RESULT_OK)) {
-            Intent practicar_preg = new Intent(IniciarSesion.this, PracticarPreguntas.class);
-            practicar_preg.putExtra("materia", data.getDataString());
-            startActivity(practicar_preg);
+            Intent practicar = new Intent(IniciarSesion.this, Practicar.class/*PracticarPreguntas.class*/);
+            preferenciaDataSource.guardarMatElegida(data.getDataString());
+            startActivity(practicar);
         }
     }
 }

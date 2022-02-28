@@ -1,5 +1,6 @@
 package com.example.tp_final.vistas.fragmentos;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,11 +11,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.tp_final.R;
+import com.example.tp_final.vistas.PracticarExamenes;
+import com.example.tp_final.vistas.VistaPreguntas;
 
 public class PracticarExamenesFragment extends Fragment {
 
     private String materiaElegida;
     private TextView materiaElegidaTV;
+    private TextView examenes;
 
     public PracticarExamenesFragment() {
         // Required empty public constructor
@@ -35,6 +39,15 @@ public class PracticarExamenesFragment extends Fragment {
 
         materiaElegidaTV = (TextView) view.findViewById(R.id.txt_materia_elegida_PE);
         materiaElegidaTV.setText(materiaElegida);
+        examenes = (TextView) view.findViewById(R.id.txt_examenes);
+
+        examenes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent practicar_examen = new Intent(getActivity(), VistaPreguntas.class);
+                startActivity(practicar_examen);
+            }
+        });
 
         return view;
     }

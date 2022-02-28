@@ -1,5 +1,6 @@
 package com.example.tp_final.vistas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tp_final.MainActivity;
 import com.example.tp_final.PreferenciaDataSource;
 import com.example.tp_final.R;
 import com.example.tp_final.libreriaDePreguntas.Preguntas;
@@ -36,7 +38,9 @@ public class VistaPreguntas extends AppCompatActivity {
     private PreferenciaDataSource preferenciaDataSource;
     private String materiaElegida;
 
-    private Object aux;
+    //Botones de la vista "vista_puntaje"
+    private Button volverAExamenes;
+    private TextView volverAtrasDesdePuntaje;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,8 +53,14 @@ public class VistaPreguntas extends AppCompatActivity {
         rta3 = (Button) findViewById(R.id.btn_btn_rta3);
         siguientePreg = (Button) findViewById(R.id.btn_siguiente_preg);
 
+        //De la vista "vista_puntaje"
+        volverAExamenes = (Button) findViewById(R.id.btn_volver_a_examenes);
+        volverAtrasDesdePuntaje = (TextView) findViewById(R.id.volver_atras_desde_puntaje);
+
+        mPreguntas = new Preguntas();
         preferenciaDataSource = new PreferenciaDataSource(this);
         materiaElegida = preferenciaDataSource.recuperarMatElegida();
+
         obtenerLibreriaDePreguntas(materiaElegida);
 
         actualizarPregunta();
@@ -138,6 +148,24 @@ public class VistaPreguntas extends AppCompatActivity {
                 rta2.setTextColor(getResources().getColor(R.color.darkGrey));
                 rta3.setBackgroundResource(R.drawable.btn_redondeado_sin_color);
                 rta3.setTextColor(getResources().getColor(R.color.darkGrey));
+            }
+        });
+
+        volverAExamenes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent volverAtras = new Intent(VistaPreguntas.this, Practicar.class);
+                volverAtras.putExtra("practica", "examenes");
+                startActivity(volverAtras);
+            }
+        });
+
+        volverAtrasDesdePuntaje.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent volverAtras = new Intent(VistaPreguntas.this, Practicar.class);
+                volverAtras.putExtra("practica", "examenes");
+                startActivity(volverAtras);
             }
         });
 

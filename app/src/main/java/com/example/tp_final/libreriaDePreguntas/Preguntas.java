@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Preguntas {
 
+    public Preguntas(){}
 
     private String mPreguntas [];
     private String mRespuestas [][];
@@ -23,7 +24,6 @@ public class Preguntas {
         String respuesta1 = mRespuestas[a][1];
         return respuesta1;
     }
-
 
     public String getRespuesta3(int a){
         String respuesta2 = mRespuestas[a][2];

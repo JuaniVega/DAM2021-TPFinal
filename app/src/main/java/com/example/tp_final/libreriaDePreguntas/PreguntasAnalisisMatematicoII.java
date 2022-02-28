@@ -60,4 +60,16 @@ public class PreguntasAnalisisMatematicoII {
         String rtaCorrecta = mRespuestasCorrectas[a];
         return rtaCorrecta;
     }
+
+    public String[][] getmRespuestas() {
+        return mRespuestas;
+    }
+
+    public String[] getmRespuestasCorrectas() {
+        return mRespuestasCorrectas;
+    }
+
+    public String[] getmPreguntas() {
+        return mPreguntas;
+    }
 }

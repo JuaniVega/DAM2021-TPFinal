@@ -59,4 +59,16 @@ public class PreguntasAlgebra {
         String rtaCorrecta = mRespuestasCorrectas[a];
         return rtaCorrecta;
     }
+
+    public String[] getmRespuestasCorrectas() {
+        return mRespuestasCorrectas;
+    }
+
+    public String[] getmPreguntas() {
+        return mPreguntas;
+    }
+
+    public String[][] getmRespuestas() {
+        return mRespuestas;
+    }
 }

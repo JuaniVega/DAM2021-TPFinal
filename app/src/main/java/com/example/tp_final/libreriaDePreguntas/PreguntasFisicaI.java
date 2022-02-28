@@ -55,4 +55,16 @@ public class PreguntasFisicaI {
         String rtaCorrecta = mRespuestasCorrectas[a];
         return rtaCorrecta;
     }
+
+    public String[] getmPreguntas() {
+        return mPreguntas;
+    }
+
+    public String[] getmRespuestasCorrectas() {
+        return mRespuestasCorrectas;
+    }
+
+    public String[][] getmRespuestas() {
+        return mRespuestas;
+    }
 }

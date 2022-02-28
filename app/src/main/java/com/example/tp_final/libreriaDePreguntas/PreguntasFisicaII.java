@@ -64,4 +64,16 @@ public class PreguntasFisicaII {
         String rtaCorrecta = mRespuestasCorrectas[a];
         return rtaCorrecta;
     }
+
+    public String[][] getmRespuestas() {
+        return mRespuestas;
+    }
+
+    public String[] getmPreguntas() {
+        return mPreguntas;
+    }
+
+    public String[] getmRespuestasCorrectas() {
+        return mRespuestasCorrectas;
+    }
 }

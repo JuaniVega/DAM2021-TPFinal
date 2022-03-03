@@ -1,10 +1,8 @@
 package com.example.tp_final;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Consumer;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Materia{
     private String nombre;

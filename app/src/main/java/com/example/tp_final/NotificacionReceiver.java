@@ -25,7 +25,6 @@ public class NotificacionReceiver extends BroadcastReceiver {
         preferenciaDataSource= new PreferenciaDataSource(context.getApplicationContext());
         Intent i = new Intent(context, MainActivity.class);
         i.putExtra("valNotif", false);
-        //preferenciaDataSource.guardarAlarmaCreada(false);
         PendingIntent pi = PendingIntent.getActivity(context, 0, i, 0); //para que cuando se haga click en la notificacion entre en la pagina principal
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context.getApplicationContext(), CANAL_MENSAJES_ID)
@@ -36,10 +35,8 @@ public class NotificacionReceiver extends BroadcastReceiver {
         mBuilder.setContentIntent(pi);
         mBuilder.setDefaults(Notification.DEFAULT_SOUND);
         mBuilder.setAutoCancel(true);
-       // NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
 
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(0, mBuilder.build());
-        //notificationManager.notify(0, mBuilder.build());
     }
 }

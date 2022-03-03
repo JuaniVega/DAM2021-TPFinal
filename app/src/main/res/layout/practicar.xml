@@ -81,7 +81,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_practicar_examen"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/facebook_logo" />
+                app:srcCompat="@drawable/perfil" />
 
             <TextView
                 android:id="@+id/nombre_usuario"

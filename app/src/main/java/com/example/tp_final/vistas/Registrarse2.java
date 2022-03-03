@@ -58,22 +58,13 @@ public class Registrarse2 extends AppCompatActivity {
                                 if (universidad.getText().toString().trim().length() > 0) {
                                     if (pais.getSelectedItemPosition() != 0) {
 
-                                        // System.out.println("LLEGAMOS HASTA ACA");
-
                                         usuario.setNombre(nombre.getText().toString());
-                                        //System.out.println("nombre "+nombre.getText().toString());
                                         usuario.setApellido(apellido.getText().toString());
-                                        // System.out.println("apellido "+ apellido.getText().toString());
                                         usuario.setDni(Integer.parseInt(dni.getText().toString()));
-                                        // System.out.println("dni "+Integer.parseInt(dni.getText().toString()));
                                         usuario.setUniversidad(universidad.getText().toString());
-                                        // System.out.println("universidad "+universidad.getText().toString());
                                         usuario.setPais(pais.getSelectedItem().toString());
-                                        // System.out.println("pais " +pais.getSelectedItem().toString());
                                         usuario.setMail(getIntent().getExtras().getString("usuario"));
-                                        // System.out.println("usuario "+getIntent().getExtras().getString("usuario"));
                                         usuario.setCont(getIntent().getExtras().getString("contraseña"));
-                                        //System.out.println("contraseña "+getIntent().getExtras().getString("contraseña"));
 
                                         usuarioRepo.insertar(usuario);
                                         Toast.makeText(Registrarse2.this, "Usuario creado con ÉXITO", Toast.LENGTH_LONG).show();
@@ -116,12 +107,4 @@ public class Registrarse2 extends AppCompatActivity {
 
         });
     }
-
-    /*protected void onActivityResult (int requestCode, int resultCode, Intent data){
-        if((requestCode==1) && (resultCode==RESULT_OK)){
-            Intent practicar_preg = new Intent(Registrarse2.this, PracticarPreguntas.class);
-            startActivity(practicar_preg);
-            //TODO: deberia cambiar esta linea por un intent que redirija a la pantalla correspondiente
-        }
-    }*/
 }

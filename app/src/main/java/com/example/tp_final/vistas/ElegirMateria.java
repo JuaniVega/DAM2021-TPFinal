@@ -14,4 +14,9 @@ public class ElegirMateria extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.elegir_materia);
     }
+
+    @Override
+    public void onBackPressed (){
+
+    }
 }

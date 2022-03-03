@@ -32,7 +32,6 @@ public class PracticarPreguntasFragment extends Fragment {
     private Preguntas preguntas;
 
     public PracticarPreguntasFragment() {
-        // Required empty public constructor
     }
 
     public void onCreate(Bundle saveInstanceState) {

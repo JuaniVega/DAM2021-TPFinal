@@ -44,11 +44,6 @@ public class VistaPreguntasUnicas extends AppCompatActivity {
     private int cantPreguntas;
     private long tiempoPresionado;
 
-    private PreferenciaDataSource preferenciaDataSource;
-    private String materiaElegida;
-
-    private Object aux;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,10 +61,7 @@ public class VistaPreguntasUnicas extends AppCompatActivity {
 
         mPreguntas = new Preguntas();
         contadorPreguntas = new ContadorPreguntas(getApplicationContext());
-      //  preferenciaDataSource = new PreferenciaDataSource(this);
         mPreguntas = contadorPreguntas.getmPreguntas();
-       // materiaElegida = preferenciaDataSource.recuperarMatElegida();
-       // obtenerLibreriaDePreguntas(materiaElegida);
 
         tema.setText(getIntent().getExtras().getString("tit_tema"));
         numeroDePregunta=getIntent().getExtras().getInt("num_preg");
@@ -86,13 +78,8 @@ public class VistaPreguntasUnicas extends AppCompatActivity {
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tiempoPresionado+2000 > System.currentTimeMillis()){
-                    VistaPreguntasUnicas.super.onBackPressed();
-                    puntos=0;
-                }else{
-                    Toast.makeText(VistaPreguntasUnicas.this, "Presiona otra vez para volver", Toast.LENGTH_SHORT).show();
-                }
-                tiempoPresionado=System.currentTimeMillis();
+                VistaPreguntasUnicas.super.onBackPressed();
+                puntos = 0;
             }
         });
 
@@ -181,42 +168,6 @@ public class VistaPreguntasUnicas extends AppCompatActivity {
 
     }
 
-    /*private Preguntas obtenerLibreriaDePreguntas(String materia){
-        switch (materia){
-            case "Fisica I":
-                PreguntasFisicaI mPreguntasFisicaI = new PreguntasFisicaI();
-                mPreguntas.setmPreguntas(mPreguntasFisicaI.getmPreguntas());
-                mPreguntas.setmRespuestas(mPreguntasFisicaI.getmRespuestas());
-                mPreguntas.setmRespuestasCorrectas(mPreguntasFisicaI.getmRespuestasCorrectas());
-                return mPreguntas;
-            case "Fisica II":
-                PreguntasFisicaII mPreguntasFisicaII = new PreguntasFisicaII();
-                mPreguntas.setmPreguntas(mPreguntasFisicaII.getmPreguntas());
-                mPreguntas.setmRespuestas(mPreguntasFisicaII.getmRespuestas());
-                mPreguntas.setmRespuestasCorrectas(mPreguntasFisicaII.getmRespuestasCorrectas());
-                return mPreguntas;
-            case "Análisis matemático I":
-                PreguntasAnalisisMatematicoI mPreguntasAnalisisI = new PreguntasAnalisisMatematicoI();
-                mPreguntas.setmPreguntas(mPreguntasAnalisisI.getmPreguntas());
-                mPreguntas.setmRespuestas(mPreguntasAnalisisI.getmRespuestas());
-                mPreguntas.setmRespuestasCorrectas(mPreguntasAnalisisI.getmRespuestasCorrectas());
-                return mPreguntas;
-            case "Análisis matemático II":
-                PreguntasAnalisisMatematicoII mPreguntasAnalisisII = new PreguntasAnalisisMatematicoII();
-                mPreguntas.setmPreguntas(mPreguntasAnalisisII.getmPreguntas());
-                mPreguntas.setmRespuestas(mPreguntasAnalisisII.getmRespuestas());
-                mPreguntas.setmRespuestasCorrectas(mPreguntasAnalisisII.getmRespuestasCorrectas());
-                return mPreguntas;
-            case "Álgebra y geometría analítica":
-                PreguntasAlgebra mPreguntasAlgebra = new PreguntasAlgebra();
-                mPreguntas.setmPreguntas(mPreguntasAlgebra.getmPreguntas());
-                mPreguntas.setmRespuestas(mPreguntasAlgebra.getmRespuestas());
-                mPreguntas.setmRespuestasCorrectas(mPreguntasAlgebra.getmRespuestasCorrectas());
-                return mPreguntas;
-        }
-        return null;
-    }*/
-
     private void actualizarPregunta(int numDePregunta){
         pregunta.setText(mPreguntas.getPregunta(numDePregunta));
         rta1.setText(mPreguntas.getRespuesta1(numDePregunta));
@@ -225,6 +176,11 @@ public class VistaPreguntasUnicas extends AppCompatActivity {
 
         respuesta = mPreguntas.getRespuestaCorrecta(numDePregunta);
         numPregunta.setText("Pregunta N° " + (numDePregunta+1));
+    }
+
+    @Override
+    public void onBackPressed (){
+
     }
 
     }

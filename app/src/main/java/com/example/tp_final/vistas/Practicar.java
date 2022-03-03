@@ -84,9 +84,6 @@ public class Practicar extends AppCompatActivity implements NavigationView.OnNav
                 getSupportFragmentManager().beginTransaction().replace(R.id.contenedor_fragments,practicarPreguntasFrag).commit();
                 getSupportFragmentManager().beginTransaction().addToBackStack(null);
                 marcarSeleccionadoPreg();
-                /*Intent pracPreguntas = new Intent(Practicar.this, PracticarPreguntas.class);
-                pracPreguntas.putExtra("materia", materiaElegida.getText());
-                startActivity(pracPreguntas);*/
             }
         });
 
@@ -97,13 +94,6 @@ public class Practicar extends AppCompatActivity implements NavigationView.OnNav
                 getSupportFragmentManager().beginTransaction().replace(R.id.contenedor_fragments,practicarExamenesFrag).commit();
                 getSupportFragmentManager().beginTransaction().addToBackStack(null);
                 marcarSeleccionadoExam();
-
-                /*Intent elegir_materia= new Intent(Practicar.this, ExamenRecycler.class);
-                startActivityForResult(elegir_materia, 2);*/
-
-               /* Intent pracPreguntas = new Intent(Practicar.this, PracticarPreguntas.class);
-                pracPreguntas.putExtra("materia", materiaElegida.getText());
-                startActivity(pracPreguntas);*/
             }
         });
 
@@ -130,8 +120,6 @@ public class Practicar extends AppCompatActivity implements NavigationView.OnNav
 
         DrawableCompat.setTint(botonDrPreg,getResources().getColor(R.color.teal));
         DrawableCompat.setTint(botonDrExam,getResources().getColor(R.color.grey));
-       /* btnPracticarPreguntas.setBackground(getDrawable(R.drawable.input_txt));
-        btnPracticarExamenes.setBackground(getDrawable(R.drawable.input_txt));*/
     }
 
     private void marcarSeleccionadoPreg() {
@@ -139,11 +127,7 @@ public class Practicar extends AppCompatActivity implements NavigationView.OnNav
         Drawable botonDrExam = btnPracticarExamenes.getBackground();
         DrawableCompat.setTint(botonDrPreg,getResources().getColor(R.color.grey));
         DrawableCompat.setTint(botonDrExam,getResources().getColor(R.color.teal));
-      /*  btnPracticarPreguntas.setBackground(getDrawable(R.drawable.input_txt));
-        btnPracticarExamenes.setBackground(getDrawable(R.drawable.input_txt));*/
     }
-
-    //TODO: reparar botones que no se pintan bien, borrar clases innecesarias(practicarPreguntas, practicarExamenes, xml de prac_pregu, prac_exa, dl_prac_preg, dl_prac_exam)
 
     private void configurarFragments() {
         //Cargamos valores para pasar a los fragments
@@ -186,20 +170,10 @@ public class Practicar extends AppCompatActivity implements NavigationView.OnNav
             preferenciaDataSource.guardarMatElegida(data.getDataString());
             startActivity(practicar);
         }
-
-        /*if ((requestCode == 2) && (resultCode == RESULT_OK)) {
-            Intent practicar = new Intent(Practicar.this, VistaPreguntas.class*//*PracticarPreguntas.class*//*);
-            startActivity(practicar);
-        }*/
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    public boolean onOptionsItemSelected(MenuItem item) { return false;   }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -243,5 +217,10 @@ public class Practicar extends AppCompatActivity implements NavigationView.OnNav
         preferenciaDataSource.guardarNombreUsuarioActual("");
         preferenciaDataSource.guardarApellidoUsuarioActual("");
         preferenciaDataSource.guardarDniUsuarioActual(0);
+    }
+
+    @Override
+    public void onBackPressed (){
+
     }
 }

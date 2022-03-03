@@ -11,7 +11,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -58,7 +57,7 @@ public class Configuracion extends AppCompatActivity implements NavigationView.O
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
                 if(config.isChecked()) {
-                    horaNotifiacion = "03:10:00";
+                    horaNotifiacion = "10:00:00";
                     crearNotificacion(horaNotifiacion);
                     Toast.makeText(Configuracion.this, "Notificaciones activadas", Toast.LENGTH_LONG).show();
                 }else{
@@ -69,7 +68,6 @@ public class Configuracion extends AppCompatActivity implements NavigationView.O
                 preferenciaDataSource.guardarAlarmaCreada(config.isChecked());
             }
         });
-
 
         configurarToolbar();
 

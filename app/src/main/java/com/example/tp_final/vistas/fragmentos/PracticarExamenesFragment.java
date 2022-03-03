@@ -21,12 +21,10 @@ public class PracticarExamenesFragment extends Fragment {
 
     private String materiaElegida;
     private TextView materiaElegidaTV;
-    private TextView examenes;
     private ArrayList<Examen> examen;
     private RecyclerView recyclerView;
 
     public PracticarExamenesFragment() {
-        // Required empty public constructor
     }
 
     public void onCreate(Bundle saveInstanceState) {

@@ -23,8 +23,6 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.ViewHolder> {
         TextView tema;
         TextView num_preg;
         TextView txt_preguntas;
-        /*ContadorPreguntas contadorPreguntas;
-        Preguntas preguntas;*/
         View v;
 
         public ViewHolder(View a) {
@@ -32,8 +30,6 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.ViewHolder> {
             tema=a.findViewById(R.id.txt_tema);
             num_preg=a.findViewById(R.id.txt_num_preguntas);
             txt_preguntas=a.findViewById(R.id.txt_preguntas);
-            /*contadorPreguntas = new ContadorPreguntas(a.getContext());
-            preguntas = contadorPreguntas.getmPreguntas();*/
             v=a;
         }
     }
@@ -56,15 +52,11 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.ViewHolder> {
         holder.num_preg.setText("");
         holder.txt_preguntas.setText("");
 
-        //int posicion_selec= position;
-
         holder.v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String tema =(String) holder.tema.getText();
                 int posicion_selec=holder.getLayoutPosition();
-
-               //System.out.println("posicion seleccionada: "+posicion_selec);
 
                 Intent i2 = new Intent(context, VistaPreguntasUnicas.class);
                 i2.putExtra("tit_tema", tema);

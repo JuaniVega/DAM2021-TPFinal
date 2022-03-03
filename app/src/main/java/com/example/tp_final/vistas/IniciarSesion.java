@@ -132,7 +132,7 @@ public class IniciarSesion extends AppCompatActivity {
     protected void onActivityResult (int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if ((requestCode == 1) && (resultCode == RESULT_OK)) {
-            Intent practicar = new Intent(IniciarSesion.this, Practicar.class/*PracticarPreguntas.class*/);
+            Intent practicar = new Intent(IniciarSesion.this, Practicar.class);
             preferenciaDataSource.guardarMatElegida(data.getDataString());
             startActivity(practicar);
         }

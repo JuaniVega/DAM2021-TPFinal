@@ -36,9 +36,6 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MiCuenta extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-
-    private TextView flechaVolverAtras;
-    private TextView volverAtras;
     private Button btnCerrarSesion;
     private Button btnGuardar;
     private Toolbar toolbar;
@@ -47,7 +44,6 @@ public class MiCuenta extends AppCompatActivity implements NavigationView.OnNavi
     private EditText nuevoMailtxt, nuevaConttxt;
     private PreferenciaDataSource preferenciaDataSource;
     private ImageView imgUsuario;
-    //private Button sacarFoto;
     private TextView sacarFoto;
 
     //Datos para configurar cámara
@@ -62,11 +58,8 @@ public class MiCuenta extends AppCompatActivity implements NavigationView.OnNavi
 
         preferenciaDataSource= new PreferenciaDataSource(this);
 
-        //flechaVolverAtras = (TextView) findViewById(R.id.flecha);
-       // volverAtras = (TextView) findViewById(R.id.volver_atras_txt);
         btnCerrarSesion = (Button) findViewById(R.id.btn_cerrar_sesion);
         imgUsuario = (ImageView) findViewById(R.id.img_usuario);
-        //sacarFoto = (Button) findViewById(R.id.btn_captura);
         sacarFoto = (TextView) findViewById(R.id.txt_tema1);
         btnGuardar = (Button) findViewById(R.id.btn_guardar);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -79,24 +72,6 @@ public class MiCuenta extends AppCompatActivity implements NavigationView.OnNavi
         configurarToolbar();
 
         configurarMenuDesplegable();
-
-        /*flechaVolverAtras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent volver_atras = new Intent(MiCuenta.this, PracticarPreguntas.class);
-                startActivity(volver_atras);
-                //TODO: ver como volver a las distintas pantallas (de practicar preg o examenes)
-            }
-        });*/
-
-        /*volverAtras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent volver_atras = new Intent(MiCuenta.this, PracticarPreguntas.class);
-                startActivity(volver_atras);
-                //TODO: ver como volver a las distintas pantallas (de practicar preg o examenes)
-            }
-        });*/
 
         btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,44 +113,6 @@ public class MiCuenta extends AppCompatActivity implements NavigationView.OnNavi
             imgUsuario.setImageBitmap(bmp);
         }
     }
-
-    /*private File createImageFile() throws IOException {
-        // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
-                imageFileName,  *//* prefix *//*
-                ".jpg",         *//* suffix *//*
-                storageDir      *//* directory *//*
-        );
-
-        // Save a file: path for use with ACTION_VIEW intents
-        currentPhotoPath = image.getAbsolutePath();
-        return image;
-    }
-
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Ensure that there's a camera activity to handle the intent
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            // Create the File where the photo should go
-            File photoFile = null;
-            try {
-                photoFile = createImageFile();
-            } catch (IOException ex) {
-                // Error occurred while creating the File
-            }
-            // Continue only if the File was successfully created
-            if (photoFile != null) {
-                Uri photoURI = FileProvider.getUriForFile(this,
-                        "com.example.android.fileprovider",
-                        photoFile);
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
-            }
-        }
-    }*/
 
     private void borrarDatosUsuarioActual() {
         preferenciaDataSource.guardarMailUsuarioActual("");

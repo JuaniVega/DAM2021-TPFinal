@@ -31,30 +31,17 @@ public class UsuarioRepo {
         );
     }
 
-   //public LiveData<List<Usuario>> validarSesion(String mail, String cont){
-    //    LiveData<List<Usuario>> listaUsuario= usuarioDao.validarSesion(/*mail, cont*/);
-   //     return listaUsuario;
-    //}
-
     public List<Usuario> validarSesion(String mail, String cont){
            List<Usuario> listaUsuario= usuarioDao.validarSesion(mail, cont);
             return listaUsuario;
         }
 
-    /*public LiveData<List<Usuario>> validarMailExistente(String mail){
-        LiveData<List<Usuario>> listaUsuario= usuarioDao.validarMailExistente(mail);
-        return listaUsuario;
-    }*/
 
     public List<Usuario> validarMailExistente(String mail){
         List<Usuario> listaUsuario= usuarioDao.validarMailExistente(mail);
         return listaUsuario;
     }
 
-    /*public LiveData<List<Usuario>> validarDniExistente(int dni){
-        LiveData<List<Usuario>> listaUsuario= usuarioDao.validarDniExistente(dni);
-        return listaUsuario;
-    }*/
 
     public List<Usuario> validarDniExistente(int dni){
         List<Usuario> listaUsuario= usuarioDao.validarDniExistente(dni);

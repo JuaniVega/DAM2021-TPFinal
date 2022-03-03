@@ -58,9 +58,6 @@ public class ExamenAdapter extends RecyclerView.Adapter<ExamenAdapter.ViewHolder
         holder.examen.setText(examen1.getNombre());
         holder.num_preg.setText(String.valueOf(holder.cantPreg));
 
-        /*Intent i1 = new Intent(context, ContadorPreguntas.class);
-        context.startActivityForResult(i1, 1);*/
-
         holder.v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,7 +75,5 @@ public class ExamenAdapter extends RecyclerView.Adapter<ExamenAdapter.ViewHolder
     public int getItemCount() {
         return mDataSet.size();
     }
-
-
 
 }

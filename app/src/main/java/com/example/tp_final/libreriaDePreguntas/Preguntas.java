@@ -1,7 +1,5 @@
 package com.example.tp_final.libreriaDePreguntas;
 
-import java.util.ArrayList;
-
 public class Preguntas {
 
     public Preguntas() {

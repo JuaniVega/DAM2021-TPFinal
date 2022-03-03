@@ -13,20 +13,12 @@ import java.util.List;
 
 @Dao
 public interface UsuarioDao {
-    //@Query("SELECT * FROM usuario WHERE mail= :mail")
-    //LiveData<List<Usuario>> validarMailExistente(String mail);
 
     @Query("SELECT * FROM usuario WHERE mail= :mail")
     List<Usuario> validarMailExistente(String mail);
 
-    //@Query("SELECT * FROM usuario WHERE dni= :dni")
-    //LiveData<List<Usuario>> validarDniExistente(int dni);
-
     @Query("SELECT * FROM usuario WHERE dni= :dni")
     List<Usuario> validarDniExistente(int dni);
-
-    //@Query ("SELECT * FROM usuario WHERE dni=\"2\"/*mail= \"aaa@gmail.com\"*/")
-   // LiveData<List<Usuario>> validarSesion(/*String mail, String contraseña*/);
 
     @Query ("SELECT * FROM usuario WHERE mail= :mail AND contraseña= :contraseña")
     List<Usuario> validarSesion(String mail, String contraseña);

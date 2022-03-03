@@ -33,8 +33,6 @@
         <activity android:name=".vistas.Registrarse"/>
         <activity android:name=".vistas.ElegirMateria"/>
         <activity android:name=".vistas.Registrarse2"/>
-        <activity android:name=".vistas.PracticarPreguntas"/>
-        <activity android:name=".vistas.PracticarExamenes"/>
         <activity android:name=".vistas.Practicar"/>
         <activity android:name=".vistas.MiCuenta"/>
         <activity android:name=".vistas.VistaPreguntasExamenes"/>

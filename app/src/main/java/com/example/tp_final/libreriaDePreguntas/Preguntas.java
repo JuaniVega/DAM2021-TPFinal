@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 public class Preguntas {
 
-    public Preguntas(){}
+    public Preguntas() {
+    }
 
     private String mPreguntas [];
     private String mRespuestas [][];
     private String mRespuestasCorrectas [];
+    private String mTemas [];
 
     public String getPregunta(int a) {
         String pregunta = mPreguntas[a];
@@ -25,6 +27,7 @@ public class Preguntas {
         return respuesta1;
     }
 
+
     public String getRespuesta3(int a){
         String respuesta2 = mRespuestas[a][2];
         return respuesta2;
@@ -33,6 +36,31 @@ public class Preguntas {
     public String getRespuestaCorrecta(int a){
         String rtaCorrecta = mRespuestasCorrectas[a];
         return rtaCorrecta;
+    }
+
+    public String getTemas(int a){
+        String tema = mTemas[a];
+        return tema;
+    }
+
+    public String[] getmPreguntas() {
+        return mPreguntas;
+    }
+
+    public String[][] getmRespuestas() {
+        return mRespuestas;
+    }
+
+    public String[] getmRespuestasCorrectas() {
+        return mRespuestasCorrectas;
+    }
+
+    public String[] getmTemas() {
+        return mTemas;
+    }
+
+    public void setmTemas(String[] mTemas) {
+        this.mTemas = mTemas;
     }
 
     public void setmPreguntas(String[] mPreguntas) {

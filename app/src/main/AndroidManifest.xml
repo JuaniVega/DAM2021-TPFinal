@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tp_final">
         <receiver
-            android:name=".MyReceiver1"
+            android:name=".NotificacionReceiver"
             android:enabled="true"
             android:exported="true"></receiver>
 
@@ -29,7 +29,6 @@
         </provider>
 
         <activity android:name=".MateriaRecycler"/>
-        <activity android:name=".TemaRecycler"/>
         <activity android:name=".vistas.IniciarSesion"/>
         <activity android:name=".vistas.Registrarse"/>
         <activity android:name=".vistas.ElegirMateria"/>
@@ -38,7 +37,9 @@
         <activity android:name=".vistas.PracticarExamenes"/>
         <activity android:name=".vistas.Practicar"/>
         <activity android:name=".vistas.MiCuenta"/>
-        <activity android:name=".vistas.VistaPreguntas"/>
+        <activity android:name=".vistas.VistaPreguntasExamenes"/>
+        <activity android:name=".vistas.VistaPreguntasUnicas"/>
+        <activity android:name=".vistas.VistaPuntajes"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

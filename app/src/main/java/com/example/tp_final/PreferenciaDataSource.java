@@ -122,4 +122,16 @@ public class PreferenciaDataSource {
     }
 
 
+    //Alarma creada
+    public void guardarAlarmaCreada(boolean alarma){
+        editor.putBoolean("alarma", alarma);
+        editor.commit();
+    }
+
+    public boolean recuperarAlarmaCreada(){
+        boolean defaultValue=false;
+        boolean alarma=sharedPreferences.getBoolean("alarma",defaultValue);
+        return alarma;
+    }
+
 }

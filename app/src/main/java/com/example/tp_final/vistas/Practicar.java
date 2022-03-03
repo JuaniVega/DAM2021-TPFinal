@@ -3,16 +3,13 @@ package com.example.tp_final.vistas;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.SurfaceControl;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
@@ -20,10 +17,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tp_final.MainActivity;
 import com.example.tp_final.MateriaRecycler;
@@ -102,6 +97,10 @@ public class Practicar extends AppCompatActivity implements NavigationView.OnNav
                 getSupportFragmentManager().beginTransaction().replace(R.id.contenedor_fragments,practicarExamenesFrag).commit();
                 getSupportFragmentManager().beginTransaction().addToBackStack(null);
                 marcarSeleccionadoExam();
+
+                /*Intent elegir_materia= new Intent(Practicar.this, ExamenRecycler.class);
+                startActivityForResult(elegir_materia, 2);*/
+
                /* Intent pracPreguntas = new Intent(Practicar.this, PracticarPreguntas.class);
                 pracPreguntas.putExtra("materia", materiaElegida.getText());
                 startActivity(pracPreguntas);*/
@@ -187,6 +186,11 @@ public class Practicar extends AppCompatActivity implements NavigationView.OnNav
             preferenciaDataSource.guardarMatElegida(data.getDataString());
             startActivity(practicar);
         }
+
+        /*if ((requestCode == 2) && (resultCode == RESULT_OK)) {
+            Intent practicar = new Intent(Practicar.this, VistaPreguntas.class*//*PracticarPreguntas.class*//*);
+            startActivity(practicar);
+        }*/
     }
 
     @Override

@@ -35,6 +35,15 @@ public class PreguntasAnalisisMatematicoII {
             "f(-2,-1) = -16 y f(2,1) = 16 son mínimos",
     };
 
+    private String temas [] = {
+            "Tema 2",
+            "Tema 2",
+            "Tema 3",
+            "Tema 5",
+            "Tema 5",
+            "Tema 6",
+    };
+
     public String getPregunta(int a) {
         String pregunta = mPreguntas[a];
         return pregunta;
@@ -60,6 +69,8 @@ public class PreguntasAnalisisMatematicoII {
         String rtaCorrecta = mRespuestasCorrectas[a];
         return rtaCorrecta;
     }
+
+    public String[] getTemas() { return temas; }
 
     public String[][] getmRespuestas() {
         return mRespuestas;

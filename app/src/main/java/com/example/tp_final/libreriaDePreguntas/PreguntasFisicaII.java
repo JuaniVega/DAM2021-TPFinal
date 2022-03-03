@@ -39,6 +39,15 @@ public class PreguntasFisicaII {
             "La intensidad de la luz",
     };
 
+    private String temas [] = {
+            "Tema 3",
+            "Tema 2",
+            "Tema 3",
+            "Tema 4",
+            "Tema 6",
+            "Tema 6",
+    };
+
     public String getPregunta(int a) {
         String pregunta = mPreguntas[a];
         return pregunta;
@@ -64,6 +73,8 @@ public class PreguntasFisicaII {
         String rtaCorrecta = mRespuestasCorrectas[a];
         return rtaCorrecta;
     }
+
+    public String[] getTemas() { return temas; }
 
     public String[][] getmRespuestas() {
         return mRespuestas;

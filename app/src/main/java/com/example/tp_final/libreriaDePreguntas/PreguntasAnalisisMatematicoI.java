@@ -32,6 +32,15 @@ public class PreguntasAnalisisMatematicoI {
             "Pendiente de la recta tangente a esa función en ese punto",
     };
 
+    private String temas [] = {
+            "Tema 1",
+            "Tema 2",
+            "Tema 3",
+            "Tema 2",
+            "Tema 3",
+            "Tema 6",
+    };
+
     public String getPregunta(int a) {
         String pregunta = mPreguntas[a];
         return pregunta;
@@ -57,6 +66,8 @@ public class PreguntasAnalisisMatematicoI {
         String rtaCorrecta = mRespuestasCorrectas[a];
         return rtaCorrecta;
     }
+
+    public String[] getTemas() { return temas; }
 
     public String[] getmPreguntas() {
         return mPreguntas;

@@ -34,6 +34,15 @@ public class PreguntasAlgebra {
             "x = 60; y = 18",
     };
 
+    private String temas [] = {
+            "Tema 1",
+            "Tema 3",
+            "Tema 3",
+            "Tema 4",
+            "Tema 5",
+            "Tema 4",
+    };
+
     public String getPregunta(int a) {
         String pregunta = mPreguntas[a];
         return pregunta;
@@ -59,6 +68,8 @@ public class PreguntasAlgebra {
         String rtaCorrecta = mRespuestasCorrectas[a];
         return rtaCorrecta;
     }
+
+    public String[] getTemas() { return temas; }
 
     public String[] getmRespuestasCorrectas() {
         return mRespuestasCorrectas;

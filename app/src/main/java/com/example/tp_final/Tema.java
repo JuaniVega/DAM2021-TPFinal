@@ -33,21 +33,42 @@ public class Tema {
 
         tem.add(new Tema(
                 m->{
-                    m.setNombre("MRU");
+                    m.setNombre("Tema 1");
                     m.setCantPreguntas("8");
                 }
         ));
 
         tem.add(new Tema(
                 m->{
-                    m.setNombre("MRUA");
+                    m.setNombre("Tema 2");
                     m.setCantPreguntas("7");
                 }
         ));
 
         tem.add(new Tema(
                 m->{
-                    m.setNombre("Movimiento circular");
+                    m.setNombre("Tema 3");
+                    m.setCantPreguntas("9");
+                }
+        ));
+
+        tem.add(new Tema(
+                m->{
+                    m.setNombre("Tema 4");
+                    m.setCantPreguntas("9");
+                }
+        ));
+
+        tem.add(new Tema(
+                m->{
+                    m.setNombre("Tema 5");
+                    m.setCantPreguntas("9");
+                }
+        ));
+
+        tem.add(new Tema(
+                m->{
+                    m.setNombre("Tema 6");
                     m.setCantPreguntas("9");
                 }
         ));

@@ -21,6 +21,7 @@
     <string name="practicar_examen">Practicar exámenes</string>
     <string name="volver_atras">Volver atrás</string>
     <string name="siguiente_preg_btn">Siguiente pregunta</string>
+    <string name="finalizar_preg_btn">Comprobar pregunta</string>
     <string name="cerrar_sesion_btn">Cerrar Sesión</string>
     <string name="guardar_btn">Guardar</string>
 
@@ -38,7 +39,7 @@
     <string name="cerrar_menu_desplegable">Menu desplegable cerrado</string>
 
     //Titulos de menú
-    <string name="obtener_ayuda">Obtener ayuda</string>
+    <string name="obtener_ayuda">Ayuda</string>
     <string name="ayuda">Ayuda</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="menu">Menú</string>

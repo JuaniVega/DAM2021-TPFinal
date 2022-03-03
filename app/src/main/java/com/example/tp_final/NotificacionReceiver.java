@@ -21,11 +21,8 @@ public class NotificacionReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        //showNotification(context);
 
         preferenciaDataSource= new PreferenciaDataSource(context.getApplicationContext());
-//TODO
-        System.out.println("Es acaAAAAAAAAA");
         Intent i = new Intent(context, MainActivity.class);
         i.putExtra("valNotif", false);
         //preferenciaDataSource.guardarAlarmaCreada(false);
@@ -34,28 +31,15 @@ public class NotificacionReceiver extends BroadcastReceiver {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context.getApplicationContext(), CANAL_MENSAJES_ID)
                 .setSmallIcon(R.drawable.logo_original)
                 .setContentTitle("Es hora de estudiar!")
-                .setContentText("Aprendien2 te está esperando");
+                .setContentText("Aprendien2 te está esperando")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         mBuilder.setContentIntent(pi);
         mBuilder.setDefaults(Notification.DEFAULT_SOUND);
         mBuilder.setAutoCancel(true);
        // NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(0, mBuilder.build());
         //notificationManager.notify(0, mBuilder.build());
-    }
-
-    public void showNotification(Context context){/*
-        System.out.println("Es acaAAAAAAAAA");
-        Intent i = new Intent(context, MainActivity.class);
-        PendingIntent pi = PendingIntent.getActivity(context, 0, i, 0); //para que cuando se haga click en la notificacion entre en la pagina principal
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context.getApplicationContext(), CANAL_MENSAJES_ID)
-                .setSmallIcon(R.drawable.logo_original)
-                .setContentTitle("Es hora de estudiar!")
-                .setContentText("Aprendien2 te está esperando");
-        mBuilder.setContentIntent(pi);
-        mBuilder.setDefaults(Notification.DEFAULT_SOUND);
-        mBuilder.setAutoCancel(true);
-        NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(0, mBuilder.build());*/
     }
 }

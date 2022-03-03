@@ -237,6 +237,10 @@ public class MiCuenta extends AppCompatActivity implements NavigationView.OnNavi
                 i3.putExtra("practica", "examenes");
                 startActivity(i3);
                 break;
+            case R.id.config_menu:
+                Intent i4 = new Intent(MiCuenta.this, Configuracion.class);
+                startActivity(i4);
+                break;
             case R.id.ayuda_menu:
                 Toast.makeText(MiCuenta.this, "Ayuda solicitada", Toast.LENGTH_LONG).show();
                 break;

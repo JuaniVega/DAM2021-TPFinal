@@ -219,6 +219,10 @@ public class Practicar extends AppCompatActivity implements NavigationView.OnNav
                 i3.putExtra("practica", "examenes");
                 startActivity(i3);
                 break;
+            case R.id.config_menu:
+                Intent i4 = new Intent(Practicar.this, Configuracion.class);
+                startActivity(i4);
+                break;
             case R.id.ayuda_menu:
                 Toast.makeText(Practicar.this, "Ayuda solicitada", Toast.LENGTH_LONG).show();
                 break;

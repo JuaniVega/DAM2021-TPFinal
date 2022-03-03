@@ -6,10 +6,13 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView materiaSeleccionada;
     private String horaNotifiacion;
     private PreferenciaDataSource preferenciaDataSource;
+    private Switch switchConfig;
+    private SharedPreferences.OnSharedPreferenceChangeListener listener;
 
     public static final String CANAL_MENSAJES_ID = "1001";
 
@@ -38,16 +43,24 @@ public class MainActivity extends AppCompatActivity {
         preferenciaDataSource= new PreferenciaDataSource(this);
 
 
-        //TODO
-        if(preferenciaDataSource.recuperarAlarmaCreada()==false) {
-            horaNotifiacion = "06:17:00";
-            preferenciaDataSource.guardarAlarmaCreada(true);
-            crearNotificacion(horaNotifiacion);
-        }else{
-            if ((getIntent().getExtras()==null)||(getIntent().getExtras().getBoolean("valNotif",false))){
-                preferenciaDataSource.guardarAlarmaCreada(false);
+       /* switchConfig= (Switch) findViewById(R.id.sw_notif);
+
+        boolean valorConfig;
+        valorConfig=preferenciaDataSource.recuperarAlarmaCreada();
+
+        switchConfig.setChecked(valorConfig);
+
+        switchConfig.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(switchConfig.isChecked()) {
+                    horaNotifiacion = "06:17:00";
+                    crearNotificacion(horaNotifiacion);
+                }else{
+                    cancelarNotif();
+                }
             }
-        }
+        });*/
 
         iniciarSesionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +85,13 @@ public class MainActivity extends AppCompatActivity {
         am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + updateInterval, updateInterval, pendingIntent);*/
     }
 
+    /*private void cancelarNotif() {
+        AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+        Intent i = new Intent(MainActivity.this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, i, 0);
+        am.cancel(pendingIntent);
+    }
+
     private void createNotificationChannel () {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel1 =
@@ -85,14 +105,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void crearNotificacion(String horaNotifiacion) {
         long horaMilis;
+        long updateInterval = AlarmManager.INTERVAL_DAY;
         horaMilis=convertirHoraAMilis(horaNotifiacion);
 
         this.createNotificationChannel();
-        Intent i = new Intent(MainActivity.this, NotificacionReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, i, 0);
         AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
-        long updateInterval = AlarmManager.INTERVAL_DAY;
-        am.setRepeating(AlarmManager.RTC_WAKEUP, /*System.currentTimeMillis()+1000*10*/horaMilis + updateInterval, /*1000*5*/updateInterval, pendingIntent);
+        Intent i = new Intent(MainActivity.this, NotificacionReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, i, 0);
+
+        am.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+1000*10*//*horaMilis + updateInterval*//*, *//*1000*5*//*updateInterval, pendingIntent);
+
+        System.out.println("Aca salimos");
 
     }
 
@@ -104,7 +127,24 @@ public class MainActivity extends AppCompatActivity {
         long total = secondsToMs + minutesToMs + hoursToMs;
 
         return total;
-    }
+    }*/
+
+    /*@Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+
+        System.out.println("ALGO CAMBIO:"+s);
+
+        if(s.equals("alarma")){
+            if(!preferenciaDataSource.recuperarAlarmaCreada()) {
+                horaNotifiacion = "03:10:00";
+                crearNotificacion(horaNotifiacion);
+                System.out.println("SE CREO:");
+            }else{
+                cancelarNotif();
+                System.out.println("SE CANCElo:");
+            }
+        }
+    }*/
 
     /*private void crearCanales() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

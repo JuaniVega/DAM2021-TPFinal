@@ -13,6 +13,9 @@
             <item android:id="@+id/prac_exam_menu"
                 android:title="@string/practicar_examen"
                 android:icon="@drawable/ic_practicar_examenes"/>
+            <item android:id="@+id/config_menu"
+                android:title="@string/configuracion"
+                android:icon="@drawable/ic_config"/>
             <item android:id="@+id/ayuda_menu"
                 android:title="@string/ayuda"
                 android:icon="@drawable/ic_ayuda"/>
